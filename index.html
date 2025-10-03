@@ -2,100 +2,271 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pemerintah Kecamatan Makale</title>
-  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    .slideshow { display: none; }
-    .slideshow.active { display: block; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('https://www.beritadaerah.co.id/wp-content/uploads/2024/09/Plaza-Toraja-750x400.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      padding: 15px 30px;
+      background: rgba(0, 0, 0, 0.6);
+    }
+    header img {
+      height: 60px;
+      margin-right: 15px;
+    }
+    header div h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+    header div p {
+      margin: 0;
+      font-size: 14px;
+    }
+    nav {
+      background: rgba(0,0,0,0.7);
+      padding: 10px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    nav ul li {
+      position: relative;
+    }
+    nav ul li a {
+      display: block;
+      padding: 10px 15px;
+      color: #fff;
+      text-decoration: none;
+    }
+    nav ul li:hover {
+      background: rgba(255,255,255,0.2);
+    }
+    nav ul li ul {
+      display: none;
+      position: absolute;
+      background: rgba(0,0,0,0.9);
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    nav ul li:hover ul {
+      display: block;
+    }
+    nav ul li ul li a {
+      padding: 10px 20px;
+    }
+    .search-box input[type="text"] {
+      padding: 6px;
+      border-radius: 4px;
+      border: none;
+    }
+    .container {
+      display: flex;
+      padding: 20px;
+    }
+    .content {
+      flex: 3;
+      padding: 20px;
+      background: rgba(0,0,0,0.5);
+      margin-right: 20px;
+      border-radius: 8px;
+    }
+    .slideshow {
+      flex: 1;
+      position: relative;
+      max-width: 300px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .slides {
+      display: none;
+      width: 100%;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: rgba(0,0,0,0.7);
+      margin-top: 20px;
+    }
   </style>
 </head>
-<body class="bg-cover bg-center min-h-screen"
-      style="background-image: url('https://www.beritadaerah.co.id/wp-content/uploads/2024/09/Plaza-Toraja-750x400.jpg');">
-
-  <header class="bg-black/60 text-white flex items-center px-6 py-4">
-    <img src="https://tanatorajakab.go.id/logo.png" alt="Logo" class="h-12 mr-4">
+<body>
+  <header>
+    <img src="https://tanatorajakab.go.id/logo.png" alt="Logo Toraja">
     <div>
-      <h1 class="text-2xl font-bold">PEMERINTAH KECAMATAN MAKALE</h1>
-      <p class="text-sm">KABUPATEN TANA TORAJA</p>
+      <h1>PEMERINTAH KECAMATAN MAKALE</h1>
+      <p>KABUPATEN TANA TORAJA</p>
     </div>
   </header>
-
-  <nav class="bg-black/80 text-white px-6 py-3 flex justify-between items-center">
-    <ul class="flex space-x-6">
-      <li><a href="index.html" class="hover:text-yellow-400">Beranda</a></li>
-      <li>
-        <a href="profil.html" class="hover:text-yellow-400">Profil</a>
-        <ul class="absolute hidden bg-black/80 mt-2 space-y-2 p-2 rounded-lg">
-          <li><a href="profil-kecamatan.html" class="hover:text-yellow-400">Profil Kecamatan</a></li>
-          <li><a href="profil-camat.html" class="hover:text-yellow-400">Profil Camat</a></li>
-          <li><a href="struktur-organisasi.html" class="hover:text-yellow-400">Struktur Organisasi</a></li>
+  <nav>
+    <ul>
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="profil.html">Profil</a>
+        <ul>
+          <li><a href="profil_kecamatan.html">Profil Kecamatan</a></li>
+          <li><a href="profil_camat.html">Profil Camat</a></li>
+          <li><a href="struktur.html">Struktur Organisasi</a></li>
         </ul>
       </li>
-      <li><a href="layanan.html" class="hover:text-yellow-400">Layanan</a></li>
-      <li><a href="berita.html" class="hover:text-yellow-400">Berita</a></li>
-      <li>
-        <a href="galeri.html" class="hover:text-yellow-400">Galeri</a>
-        <ul class="absolute hidden bg-black/80 mt-2 space-y-2 p-2 rounded-lg">
-          <li><a href="galeri-foto.html" class="hover:text-yellow-400">Foto</a></li>
-          <li><a href="galeri-video.html" class="hover:text-yellow-400">Video</a></li>
+      <li><a href="#">Layanan</a></li>
+      <li><a href="#">Berita</a></li>
+      <li><a href="galeri.html">Galeri</a>
+        <ul>
+          <li><a href="foto.html">Foto</a></li>
+          <li><a href="video.html">Video</a></li>
         </ul>
       </li>
-      <li><a href="kontak.html" class="hover:text-yellow-400">Kontak</a></li>
+      <li><a href="#">Kontak</a></li>
     </ul>
-
-    <form class="ml-6">
-      <input type="text" id="searchInput" placeholder="Cari..." class="px-2 py-1 rounded text-black">
-    </form>
+    <div class="search-box">
+      <input type="text" placeholder="Cari...">
+    </div>
   </nav>
-
-  <main class="flex flex-col md:flex-row px-6 py-6 space-x-0 md:space-x-6">
-    <section class="flex-1 bg-white/90 p-4 rounded-lg shadow-lg">
-      <h2 class="text-xl font-bold mb-4">Postingan Terbaru</h2>
-      <article class="mb-4 post"><h3 class="font-bold">Judul Postingan 1</h3><p>Isi ringkas postingan 1...</p></article>
-      <article class="mb-4 post"><h3 class="font-bold">Judul Postingan 2</h3><p>Isi ringkas postingan 2...</p></article>
-      <article class="mb-4 post"><h3 class="font-bold">Judul Postingan 3</h3><p>Isi ringkas postingan 3...</p></article>
-    </section>
-
-    <aside class="bg-white/90 p-4 rounded-lg shadow-lg mt-6 md:mt-0 md:w-1/3">
-      <h2 class="text-lg font-bold mb-3 text-center">Galeri Foto</h2>
-      <div class="relative">
-        <img class="slideshow active w-full h-48 object-cover rounded-lg" 
-             src="https://upload.wikimedia.org/wikipedia/commons/4/48/Toraja_traditional_house.jpg" alt="Foto 1">
-        <img class="slideshow w-full h-48 object-cover rounded-lg" 
-             src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Tana_Toraja_traditional_buildings.jpg" alt="Foto 2">
-        <img class="slideshow w-full h-48 object-cover rounded-lg" 
-             src="https://upload.wikimedia.org/wikipedia/commons/6/65/Toraja_coffee.jpg" alt="Foto 3">
-      </div>
-    </aside>
-  </main>
-
-  <footer class="bg-black/70 text-gray-300 text-center py-4 mt-8">
-    <p>&copy; <span id="year"></span> Pemerintah Kecamatan Makale | Kabupaten Tana Toraja</p>
+  <div class="container">
+    <div class="content">
+      <h2>Selamat Datang di Website Kecamatan Makale</h2>
+      <p>Ini adalah halaman utama dengan konten dummy. Anda dapat mengganti isi sesuai kebutuhan resmi pemerintah kecamatan.</p>
+    </div>
+    <div class="slideshow">
+      <img class="slides" src="https://source.unsplash.com/300x200/?toraja" alt="Slide 1">
+      <img class="slides" src="https://source.unsplash.com/300x200/?landscape" alt="Slide 2">
+      <img class="slides" src="https://source.unsplash.com/300x200/?nature" alt="Slide 3">
+    </div>
+  </div>
+  <footer>
+    <p>© 2024 Pemerintah Kecamatan Makale. All Rights Reserved.</p>
   </footer>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    const searchInput = document.getElementById("searchInput");
-    searchInput.addEventListener("keyup", function () {
-      const filter = searchInput.value.toLowerCase();
-      document.querySelectorAll(".post").forEach(post => {
-        const text = post.innerText.toLowerCase();
-        post.style.display = text.includes(filter) ? "" : "none";
-      });
-    });
-
-    let slideIndex = 0;
+    let index = 0;
     function showSlides() {
-      const slides = document.getElementsByClassName("slideshow");
-      for (let i = 0; i < slides.length; i++) slides[i].classList.remove("active");
-      slideIndex++;
-      if (slideIndex > slides.length) slideIndex = 1;
-      slides[slideIndex - 1].classList.add("active");
+      let slides = document.getElementsByClassName("slides");
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      index++;
+      if (index > slides.length) {index = 1}
+      slides[index-1].style.display = "block";
       setTimeout(showSlides, 3000);
     }
     showSlides();
   </script>
+</body>
+</html>
+2. profil.html
+html
+Salin kode
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Profil Kecamatan Makale</title>
+</head>
+<body>
+  <h1>Profil Kecamatan Makale</h1>
+  <p>Halaman ini berisi informasi umum mengenai Kecamatan Makale.</p>
+  <ul>
+    <li><a href="profil_kecamatan.html">Profil Kecamatan</a></li>
+    <li><a href="profil_camat.html">Profil Camat</a></li>
+    <li><a href="struktur.html">Struktur Organisasi</a></li>
+  </ul>
+  <p><a href="index.html">← Kembali ke Beranda</a></p>
+</body>
+</html>
+3. profil_kecamatan.html
+html
+Salin kode
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Profil Kecamatan</title>
+</head>
+<body>
+  <h1>Profil Kecamatan</h1>
+  <p>Lorem ipsum dolor sit amet, ini adalah teks dummy untuk menggambarkan profil Kecamatan Makale.</p>
+  <p><a href="profil.html">← Kembali ke Profil</a></p>
+</body>
+</html>
+4. profil_camat.html
+html
+Salin kode
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Profil Camat</title>
+</head>
+<body>
+  <h1>Profil Camat</h1>
+  <p>Lorem ipsum dolor sit amet, ini adalah teks dummy untuk menggambarkan profil Camat Makale.</p>
+  <p><a href="profil.html">← Kembali ke Profil</a></p>
+</body>
+</html>
+5. struktur.html (Bagan Organisasi Hirarki)
+html
+Salin kode
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Struktur Organisasi Kecamatan Makale</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 { color: #222; margin-bottom: 30px; }
+    .org-chart { display: flex; flex-direction: column; align-items: center; }
+    .level { display: flex; justify-content: center; margin: 20px 0; position: relative; }
+    .box {
+      background: #004080; color: white; padding: 12px 20px;
+      border-radius: 6px; font-weight: bold; min-width: 180px; text-align: center;
+    }
+    .level::before {
+      content: ""; position: absolute; top: -20px; left: 50%; width: 2px; height: 20px; background: #333;
+    }
+    .org-chart > .level:first-child::before { display: none; }
+    .level.multi .box { margin: 0 20px; position: relative; }
+    .level.multi .box::before {
+      content: ""; position: absolute; top: -20px; left: 50%; width: 2px; height: 20px; background: #333;
+    }
+    .level.multi::after {
+      content: ""; position: absolute; top: -20px; left: 0; right: 0; height: 2px; background: #333; margin: 0 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Struktur Organisasi Kecamatan Makale</h1>
+  <div class="org-chart">
+    <div class="level"><div class="box">Camat</div></div>
+    <div class="level"><div class="box">Sekretaris Kecamatan</div></div>
+    <div class="level multi">
+      <div class="box">Kasi Pemerintahan</div>
+      <div class="box">Kasi Kesejahteraan</div>
+      <div class="box">Kasi Pelayanan</div>
+    </div>
+    <div class="level multi">
+      <div class="box">Staf 1</div>
+      <div class="box">Staf 2</div>
+      <div class="box">Staf 3</div>
+    </div>
+  </div>
+  <p style="margin-top:30px;"><a href="profil.html">← Kembali ke Profil</a></p>
 </body>
 </html>
