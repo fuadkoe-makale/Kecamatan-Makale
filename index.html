@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pemerintah Kecamatan Makale</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Animasi fade untuk slideshow */
+    .fade {
+      animation: fadeEffect 1s ease-in-out;
+    }
+    @keyframes fadeEffect {
+      from {opacity: 0.4;}
+      to {opacity: 1;}
+    }
+  </style>
 </head>
 <body class="bg-cover bg-center min-h-screen" style="background-image: url('https://www.beritadaerah.co.id/wp-content/uploads/2024/09/Plaza-Toraja-750x400.jpg');">
 
@@ -19,9 +29,10 @@
       </div>
     </header>
 
-    <!-- Navigation -->
-    <nav class="bg-black/70 text-white">
-      <ul class="flex space-x-6 px-6 py-3">
+    <!-- Navigation + Search -->
+    <nav class="bg-black/70 text-white flex items-center justify-between px-6 py-3">
+      <!-- Menu -->
+      <ul class="flex space-x-6">
         <li><a href="#" class="hover:text-yellow-300">Beranda</a></li>
 
         <!-- Menu Profil -->
@@ -48,12 +59,51 @@
 
         <li><a href="#" class="hover:text-yellow-300">Kontak</a></li>
       </ul>
+
+      <!-- Kotak Pencarian -->
+      <div class="flex items-center space-x-2">
+        <input id="searchInput" type="text" placeholder="Cari postingan..." 
+               class="px-2 py-1 rounded-lg text-black text-sm focus:outline-none">
+        <button type="button" class="bg-yellow-500 hover:bg-yellow-600 text-black px-3 py-1 rounded-lg text-sm">🔍</button>
+      </div>
     </nav>
 
-    <!-- Content Placeholder -->
-    <main class="p-8 text-center text-white">
-      <h2 class="text-3xl font-semibold mb-4">Selamat Datang di Website Resmi</h2>
-      <p class="text-lg">PEMERINTAH KECAMATAN MAKALE - Kabupaten Tana Toraja</p>
+    <!-- Main Content -->
+    <main class="grid grid-cols-3 gap-6 p-6">
+      <!-- Kolom Postingan -->
+      <section class="col-span-2 bg-white/90 p-6 rounded-lg shadow-lg">
+        <h2 class="text-xl font-bold mb-4">Postingan Terbaru</h2>
+
+        <article class="post mb-4">
+          <h3 class="font-semibold text-lg">Judul Postingan 1</h3>
+          <p class="text-gray-700 text-sm">Ini adalah contoh isi postingan yang dapat diganti dengan berita atau informasi terkini dari Kecamatan Makale...</p>
+        </article>
+
+        <article class="post mb-4">
+          <h3 class="font-semibold text-lg">Judul Postingan 2</h3>
+          <p class="text-gray-700 text-sm">Isi singkat postingan kedua. Bagian ini bisa diisi dengan pengumuman, kegiatan, atau informasi pelayanan publik...</p>
+        </article>
+
+        <article class="post mb-4">
+          <h3 class="font-semibold text-lg">Pelayanan Administrasi</h3>
+          <p class="text-gray-700 text-sm">Informasi terkait pelayanan administrasi masyarakat di Kecamatan Makale...</p>
+        </article>
+
+        <article class="post mb-4">
+          <h3 class="font-semibold text-lg">Kegiatan Sosial</h3>
+          <p class="text-gray-700 text-sm">Laporan kegiatan sosial yang dilaksanakan bersama masyarakat setempat...</p>
+        </article>
+      </section>
+
+      <!-- Slideshow -->
+      <aside class="bg-white/90 p-4 rounded-lg shadow-lg">
+        <h2 class="text-lg font-bold mb-3 text-center">Galeri Foto</h2>
+        <div class="relative">
+          <img class="slideshow fade w-full h-48 object-cover rounded-lg" src="https://i.ibb.co/d2mR4kT/toraja1.jpg" alt="Foto 1">
+          <img class="slideshow fade w-full h-48 object-cover rounded-lg hidden" src="https://i.ibb.co/vHP2Yp1/toraja2.jpg" alt="Foto 2">
+          <img class="slideshow fade w-full h-48 object-cover rounded-lg hidden" src="https://i.ibb.co/T4DMCV4/toraja3.jpg" alt="Foto 3">
+        </div>
+      </aside>
     </main>
 
     <!-- Footer -->
@@ -61,6 +111,34 @@
       <p>&copy; 2024 Pemerintah Kecamatan Makale | Kabupaten Tana Toraja</p>
     </footer>
   </div>
-</body>
 
+  <!-- Script -->
+  <script>
+    // Slideshow
+    let slideIndex = 0;
+    const slides = document.querySelectorAll(".slideshow");
+
+    function showSlides() {
+      slides.forEach(slide => slide.classList.add("hidden"));
+      slideIndex++;
+      if (slideIndex > slides.length) slideIndex = 1;
+      slides[slideIndex - 1].classList.remove("hidden");
+      slides[slideIndex - 1].classList.add("fade");
+      setTimeout(showSlides, 3000);
+    }
+    showSlides();
+
+    // Pencarian Posting
+    const searchInput = document.getElementById("searchInput");
+    const posts = document.querySelectorAll(".post");
+
+    searchInput.addEventListener("keyup", function() {
+      const keyword = searchInput.value.toLowerCase();
+      posts.forEach(post => {
+        const text = post.innerText.toLowerCase();
+        post.style.display = text.includes(keyword) ? "block" : "none";
+      });
+    });
+  </script>
+</body>
 </html>
