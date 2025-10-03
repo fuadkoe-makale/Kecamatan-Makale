@@ -2,6 +2,7 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pemerintah Kecamatan Makale</title>
   <style>
     body {
@@ -9,264 +10,217 @@
       font-family: Arial, sans-serif;
       background: url('https://www.beritadaerah.co.id/wp-content/uploads/2024/09/Plaza-Toraja-750x400.jpg') no-repeat center center fixed;
       background-size: cover;
-      color: #fff;
+      color: white;
     }
+
     header {
       display: flex;
       align-items: center;
-      padding: 15px 30px;
+      justify-content: space-between;
+      padding: 10px 30px;
       background: rgba(0, 0, 0, 0.6);
     }
-    header img {
+
+    header .logo {
       height: 60px;
-      margin-right: 15px;
     }
-    header div h1 {
+
+    header .title {
+      text-align: center;
+      flex: 1;
+      color: white;
+    }
+
+    header .title h1 {
       margin: 0;
-      font-size: 24px;
+      font-size: 22px;
     }
-    header div p {
+
+    header .title p {
       margin: 0;
       font-size: 14px;
     }
-    nav {
-      background: rgba(0,0,0,0.7);
-      padding: 10px 30px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+
+    header .foto-box {
+      text-align: center;
+      margin-left: 20px;
     }
+
+    header .foto-kanan {
+      height: 120px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    header .caption {
+      margin-top: 5px;
+      font-size: 14px;
+      color: #fff;
+    }
+
+    /* Marquee Running Text */
+    .marquee {
+      background: rgba(0, 0, 0, 0.8);
+      color: yellow;
+      padding: 8px 0;
+      font-weight: bold;
+      font-size: 14px;
+      border-top: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+    }
+
+    /* Navigasi */
+    nav {
+      background: rgba(0, 0, 0, 0.7);
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+    }
+
     nav ul {
       list-style: none;
       margin: 0;
       padding: 0;
       display: flex;
     }
+
     nav ul li {
       position: relative;
     }
+
     nav ul li a {
-      display: block;
+      color: white;
       padding: 10px 15px;
-      color: #fff;
+      display: block;
       text-decoration: none;
     }
+
     nav ul li:hover {
-      background: rgba(255,255,255,0.2);
+      background: rgba(255, 255, 255, 0.2);
     }
+
     nav ul li ul {
       display: none;
       position: absolute;
-      background: rgba(0,0,0,0.9);
+      background: rgba(0,0,0,0.8);
+      list-style: none;
       margin: 0;
       padding: 0;
-      list-style: none;
+      min-width: 150px;
+      top: 100%;
+      left: 0;
+      z-index: 999;
     }
+
     nav ul li:hover ul {
       display: block;
     }
+
     nav ul li ul li a {
-      padding: 10px 20px;
+      padding: 10px;
     }
-    .search-box input[type="text"] {
-      padding: 6px;
-      border-radius: 4px;
-      border: none;
-    }
-    .container {
-      display: flex;
-      padding: 20px;
-    }
+
+    /* Konten */
     .content {
-      flex: 3;
       padding: 20px;
-      background: rgba(0,0,0,0.5);
-      margin-right: 20px;
-      border-radius: 8px;
+      background: rgba(0,0,0,0.6);
+      margin: 20px;
+      border-radius: 10px;
     }
-    .slideshow {
-      flex: 1;
-      position: relative;
-      max-width: 300px;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-    .slides {
-      display: none;
-      width: 100%;
-    }
+
     footer {
       text-align: center;
       padding: 15px;
-      background: rgba(0,0,0,0.7);
-      margin-top: 20px;
+      background: rgba(0,0,0,0.8);
+      font-size: 14px;
+      margin-top: 30px;
     }
   </style>
 </head>
 <body>
+
+  <!-- Header -->
   <header>
-    <img src="https://tanatorajakab.go.id/logo.png" alt="Logo Toraja">
-    <div>
+    <!-- Logo kiri -->
+    <img src="https://tanatorajakab.go.id/logo.png" alt="Logo Toraja" class="logo">
+
+    <!-- Judul tengah -->
+    <div class="title">
       <h1>PEMERINTAH KECAMATAN MAKALE</h1>
       <p>KABUPATEN TANA TORAJA</p>
     </div>
+
+    <!-- Foto kanan -->
+    <div class="foto-box">
+      <img src="https://source.unsplash.com/250x120/?portrait" alt="Foto Camat" class="foto-kanan">
+      <p class="caption">Camat Makale</p>
+    </div>
   </header>
+
+  <!-- Running Text -->
+  <div class="marquee">
+    <marquee id="newsTicker" behavior="scroll" direction="left" scrollamount="5"
+             onmouseover="this.stop();" onmouseout="this.start();">
+      Memuat berita...
+    </marquee>
+  </div>
+
+  <!-- Navigasi -->
   <nav>
     <ul>
       <li><a href="index.html">Beranda</a></li>
-      <li><a href="profil.html">Profil</a>
+      <li>
+        <a href="#">Profil</a>
         <ul>
-          <li><a href="profil_kecamatan.html">Profil Kecamatan</a></li>
-          <li><a href="profil_camat.html">Profil Camat</a></li>
+          <li><a href="profil-kecamatan.html">Profil Kecamatan</a></li>
+          <li><a href="profil-camat.html">Profil Camat</a></li>
           <li><a href="struktur.html">Struktur Organisasi</a></li>
         </ul>
       </li>
-      <li><a href="#">Layanan</a></li>
-      <li><a href="#">Berita</a></li>
-      <li><a href="galeri.html">Galeri</a>
+      <li><a href="layanan.html">Layanan</a></li>
+      <li><a href="berita.html">Berita</a></li>
+      <li>
+        <a href="#">Galeri</a>
         <ul>
-          <li><a href="foto.html">Foto</a></li>
-          <li><a href="video.html">Video</a></li>
+          <li><a href="galeri-foto.html">Foto</a></li>
+          <li><a href="galeri-video.html">Video</a></li>
         </ul>
       </li>
-      <li><a href="#">Kontak</a></li>
+      <li><a href="kontak.html">Kontak</a></li>
     </ul>
-    <div class="search-box">
-      <input type="text" placeholder="Cari...">
-    </div>
   </nav>
-  <div class="container">
-    <div class="content">
-      <h2>Selamat Datang di Website Kecamatan Makale</h2>
-      <p>Ini adalah halaman utama dengan konten dummy. Anda dapat mengganti isi sesuai kebutuhan resmi pemerintah kecamatan.</p>
-    </div>
-    <div class="slideshow">
-      <img class="slides" src="https://source.unsplash.com/300x200/?toraja" alt="Slide 1">
-      <img class="slides" src="https://source.unsplash.com/300x200/?landscape" alt="Slide 2">
-      <img class="slides" src="https://source.unsplash.com/300x200/?nature" alt="Slide 3">
-    </div>
+
+  <!-- Konten -->
+  <div class="content">
+    <h2>Selamat Datang di Website Resmi Pemerintah Kecamatan Makale</h2>
+    <p>Website ini berfungsi sebagai media informasi, komunikasi, dan layanan publik bagi masyarakat Kecamatan Makale, Kabupaten Tana Toraja.</p>
   </div>
+
+  <!-- Footer -->
   <footer>
-    <p>© 2024 Pemerintah Kecamatan Makale. All Rights Reserved.</p>
+    &copy; 2024 Pemerintah Kecamatan Makale - Kabupaten Tana Toraja
   </footer>
 
+  <!-- Script Running Text -->
   <script>
-    let index = 0;
-    function showSlides() {
-      let slides = document.getElementsByClassName("slides");
-      for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      index++;
-      if (index > slides.length) {index = 1}
-      slides[index-1].style.display = "block";
-      setTimeout(showSlides, 3000);
-    }
-    showSlides();
+    fetch("berita.html")
+      .then(response => response.text())
+      .then(html => {
+        let parser = new DOMParser();
+        let doc = parser.parseFromString(html, "text/html");
+        let titles = [...doc.querySelectorAll("h2")].map(el => el.textContent.trim());
+
+        // Tambahkan ikon 📰
+        let decorated = titles.map(t => "📰 " + t);
+
+        document.getElementById("newsTicker").textContent =
+          decorated.length > 0 ? decorated.join(" — ") : "Belum ada berita terbaru.";
+      })
+      .catch(err => {
+        console.error("Gagal memuat berita:", err);
+        document.getElementById("newsTicker").textContent = "Gagal memuat berita.";
+      });
   </script>
-</body>
-</html>
-2. profil.html
-html
-Salin kode
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <title>Profil Kecamatan Makale</title>
-</head>
-<body>
-  <h1>Profil Kecamatan Makale</h1>
-  <p>Halaman ini berisi informasi umum mengenai Kecamatan Makale.</p>
-  <ul>
-    <li><a href="profil_kecamatan.html">Profil Kecamatan</a></li>
-    <li><a href="profil_camat.html">Profil Camat</a></li>
-    <li><a href="struktur.html">Struktur Organisasi</a></li>
-  </ul>
-  <p><a href="index.html">← Kembali ke Beranda</a></p>
-</body>
-</html>
-3. profil_kecamatan.html
-html
-Salin kode
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <title>Profil Kecamatan</title>
-</head>
-<body>
-  <h1>Profil Kecamatan</h1>
-  <p>Lorem ipsum dolor sit amet, ini adalah teks dummy untuk menggambarkan profil Kecamatan Makale.</p>
-  <p><a href="profil.html">← Kembali ke Profil</a></p>
-</body>
-</html>
-4. profil_camat.html
-html
-Salin kode
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <title>Profil Camat</title>
-</head>
-<body>
-  <h1>Profil Camat</h1>
-  <p>Lorem ipsum dolor sit amet, ini adalah teks dummy untuk menggambarkan profil Camat Makale.</p>
-  <p><a href="profil.html">← Kembali ke Profil</a></p>
-</body>
-</html>
-5. struktur.html (Bagan Organisasi Hirarki)
-html
-Salin kode
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <title>Struktur Organisasi Kecamatan Makale</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      padding: 20px;
-      text-align: center;
-    }
-    h1 { color: #222; margin-bottom: 30px; }
-    .org-chart { display: flex; flex-direction: column; align-items: center; }
-    .level { display: flex; justify-content: center; margin: 20px 0; position: relative; }
-    .box {
-      background: #004080; color: white; padding: 12px 20px;
-      border-radius: 6px; font-weight: bold; min-width: 180px; text-align: center;
-    }
-    .level::before {
-      content: ""; position: absolute; top: -20px; left: 50%; width: 2px; height: 20px; background: #333;
-    }
-    .org-chart > .level:first-child::before { display: none; }
-    .level.multi .box { margin: 0 20px; position: relative; }
-    .level.multi .box::before {
-      content: ""; position: absolute; top: -20px; left: 50%; width: 2px; height: 20px; background: #333;
-    }
-    .level.multi::after {
-      content: ""; position: absolute; top: -20px; left: 0; right: 0; height: 2px; background: #333; margin: 0 20px;
-    }
-  </style>
-</head>
-<body>
-  <h1>Struktur Organisasi Kecamatan Makale</h1>
-  <div class="org-chart">
-    <div class="level"><div class="box">Camat</div></div>
-    <div class="level"><div class="box">Sekretaris Kecamatan</div></div>
-    <div class="level multi">
-      <div class="box">Kasi Pemerintahan</div>
-      <div class="box">Kasi Kesejahteraan</div>
-      <div class="box">Kasi Pelayanan</div>
-    </div>
-    <div class="level multi">
-      <div class="box">Staf 1</div>
-      <div class="box">Staf 2</div>
-      <div class="box">Staf 3</div>
-    </div>
-  </div>
-  <p style="margin-top:30px;"><a href="profil.html">← Kembali ke Profil</a></p>
+
 </body>
 </html>

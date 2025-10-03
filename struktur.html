@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Struktur Organisasi Kecamatan Makale</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; padding:20px; background:#f9f9f9; }
+    h1 { text-align: center; color:#006699; }
+    .content { max-width: 900px; margin: auto; background:#fff; padding:20px; border-radius:8px; box-shadow:0 0 5px rgba(0,0,0,0.2); text-align:center; }
+
+    /* Struktur Organisasi */
+    .org-chart { display: flex; flex-direction: column; align-items: center; }
+    .org-level { display: flex; justify-content: center; margin: 20px 0; }
+    .org-box {
+      background: #e6f2ff;
+      border: 1px solid #006699;
+      padding: 10px 20px;
+      border-radius: 6px;
+      margin: 5px;
+      min-width: 180px;
+    }
+    .line { width: 2px; background: #006699; height: 20px; margin: 0 auto; }
+  </style>
+</head>
+<body>
+  <h1>Struktur Organisasi Kecamatan Makale</h1>
+  <div class="content">
+    <div class="org-chart">
+      <!-- Camat -->
+      <div class="org-box"><strong>Camat</strong><br>Nama Camat</div>
+      <div class="line"></div>
+      
+      <!-- Sekretaris -->
+      <div class="org-box"><strong>Sekretaris Kecamatan</strong><br>Nama Sekretaris</div>
+      <div class="line"></div>
+
+      <!-- Kepala Seksi -->
+      <div class="org-level">
+        <div class="org-box">Kasi Pemerintahan</div>
+        <div class="org-box">Kasi Pelayanan Umum</div>
+        <div class="org-box">Kasi Kesejahteraan</div>
+        <div class="org-box">Kasi Ekonomi & Pembangunan</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
