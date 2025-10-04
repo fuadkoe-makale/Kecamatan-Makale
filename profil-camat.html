@@ -2,27 +2,81 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Profil Camat Makale</title>
   <style>
-    body { font-family: Arial, sans-serif; margin:0; padding:20px; background:#f9f9f9; }
-    h1 { text-align: center; color:#006699; }
-    .content { max-width: 800px; margin: auto; background:#fff; padding:20px; border-radius:8px; box-shadow:0 0 5px rgba(0,0,0,0.2); }
-    .foto { text-align: center; margin-bottom: 20px; }
-    .foto img { width: 200px; border-radius: 10px; }
-    .caption { font-weight: bold; font-size: 18px; margin-top: 10px; color: #333; }
+    body { font-family: Arial, sans-serif; margin: 0; background: url('https://raw.githubusercontent.com/fuadkoe-makale/Kecamatan-Makale/main/Makale.png') no-repeat center center fixed; background-size: cover; }
+    .navbar { background: #1d3557; color: #fff; padding: 10px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; }
+    .navbar ul { list-style: none; margin: 0; padding: 0; display: flex; }
+    .navbar li { margin: 0 20px; }
+    .navbar a { color: #fff; text-decoration: none; font-weight: bold; font-size: 16px; transition: color 0.2s; }
+    .navbar a:hover { color: #f9a825; }
+    .header { background: rgba(29,53,87,0.9); color: #fff; padding: 16px 0; text-align: center; font-size: 28px; font-weight: bold; letter-spacing: 2px; margin-bottom: 16px; }
+    .subheader { background: rgba(29,53,87,0.8); color: #fff; text-align: center; font-size: 18px; padding-bottom: 8px; letter-spacing: 1px; }
+    .marquee { background: #f9a825; color: #1d3557; font-weight: bold; font-size: 18px; padding: 8px 0; margin-bottom: 12px; overflow: hidden; }
+    .container { display: flex; max-width: 1100px; margin: 32px auto; background: rgba(255,255,255,0.95); border-radius: 12px; box-shadow: 0 0 6px rgba(0,0,0,0.2); padding: 24px; }
+    .content { flex: 2; margin-right: 32px; }
+    .slideshow { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; }
+    .slideshow img { width: 100%; max-width: 280px; height: 180px; object-fit: cover; border-radius: 8px; box-shadow: 0 0 4px rgba(0,0,0,0.2); margin-bottom: 8px; }
+    .slideshow-caption { font-size: 14px; color: #333; font-weight: bold; text-align: center; margin-bottom: 12px; }
+    h1 { text-align: center; color: #006699; }
+    ul { line-height: 1.8; }
+    p { font-size: 16px; line-height: 1.5; color: #333; }
+    @media (max-width: 800px) { .container { flex-direction: column; } .content { margin-right: 0; } .slideshow { margin-top: 24px; } .slideshow img { max-width: 100%; height: auto; } }
   </style>
+  <script>
+    let slideIndex = 0;
+    const images = [
+      "https://raw.githubusercontent.com/fuadkoe-makale/Kecamatan-Makale/main/Makale.png",
+      "https://raw.githubusercontent.com/fuadkoe-makale/Kecamatan-Makale/main/Camat%20Fius.png"
+    ];
+    const captions = [
+      "Pemandangan Makale",
+      "Camat Kecamatan Makale"
+    ];
+    function showSlides() {
+      const img = document.getElementById("slide-img");
+      const caption = document.getElementById("slide-caption");
+      img.src = images[slideIndex];
+      caption.innerText = captions[slideIndex];
+      slideIndex = (slideIndex + 1) % images.length;
+    }
+    window.onload = function() {
+      showSlides();
+      setInterval(showSlides, 3000);
+    }
+  </script>
 </head>
 <body>
-  <h1>Profil Camat Makale</h1>
-  <div class="content">
-    <div class="foto">
-      <img src="https://raw.githubusercontent.com/fuadkoe-makale/Kecamatan-Makale/main/Camat%20Fius.png" alt="Foto Camat">
-      <div class="caption">Fius Minggu, SH., M.Si</div>
+  <div class="header">PEMERINTAH KECAMATAN MAKALE</div>
+  <div class="subheader">KABUPATEN TANA TORAJA</div>
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="profil-kecamatan.html">Profil</a></li>
+      <li><a href="layanan.html">Layanan</a></li>
+      <li><a href="berita.html">Berita</a></li>
+      <li><a href="galeri.html">Galeri</a></li>
+      <li><a href="kontak.html">Kontak</a></li>
+    </ul>
+  </nav>
+  <div class="marquee">
+    <marquee>
+      Pelayanan KTP Online sudah dibuka! | Lomba kebersihan antar kelurahan sedang berlangsung. | Jadwal vaksinasi Covid-19 minggu depan di Kantor Kecamatan.
+    </marquee>
+  </div>
+  <div class="container">
+    <div class="content">
+      <h1>Profil Camat Makale</h1>
+      <p>
+        <strong>Nama Camat:</strong> Fius Minggu, SH., M.Si<br>
+        <strong>Riwayat Pendidikan:</strong> Dummy text about education...<br>
+        <strong>Visi & Misi:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
     </div>
-    <p><strong>Nama Camat:</strong> Fius Minggu, SH., M.Si</p>
-    <p><strong>Riwayat Pendidikan:</strong> Dummy text about education...</p>
-    <p><strong>Visi & Misi:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <div class="slideshow">
+      <img id="slide-img" src="" alt="Slideshow">
+      <div id="slide-caption" class="slideshow-caption"></div>
+    </div>
   </div>
 </body>
 </html>
