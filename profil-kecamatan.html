@@ -4,20 +4,56 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Profil Kecamatan Makale</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin:0; padding:20px; background:#f9f9f9; }
-    h1 { text-align: center; color:#006699; }
-    .content { max-width: 800px; margin: auto; background:#fff; padding:20px; border-radius:8px; box-shadow:0 0 5px rgba(0,0,0,0.2); }
-  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <h1>Profil Kecamatan Makale</h1>
-  <div class="content">
-    <p><strong>Kecamatan Makale</strong> merupakan salah satu kecamatan di Kabupaten Tana Toraja. 
-    Kecamatan ini memiliki letak strategis sebagai pusat pemerintahan, perdagangan, dan kebudayaan.</p>
+<body class="bg-cover bg-center min-h-screen"
+      style="background-image: url('https://www.beritadaerah.co.id/wp-content/uploads/2024/09/Plaza-Toraja-750x400.jpg');">
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod, purus ut dictum convallis, magna elit commodo sapien, vel feugiat sapien lorem eget nulla.</p>
-  </div>
+  <!-- HEADER -->
+  <header class="bg-black/60 text-white flex items-center px-6 py-4">
+    <img src="https://tanatorajakab.go.id/logo.png" alt="Logo" class="h-12 mr-4">
+    <div>
+      <h1 class="text-2xl font-bold">PEMERINTAH KECAMATAN MAKALE</h1>
+      <p class="text-sm">KABUPATEN TANA TORAJA</p>
+    </div>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav class="bg-black/80 text-white px-6 py-3 flex justify-between items-center">
+    <ul class="flex space-x-6">
+      <li><a href="index.html" class="hover:text-yellow-400">Beranda</a></li>
+      <li><a href="profil.html" class="hover:text-yellow-400">Profil</a></li>
+      <li><a href="layanan.html" class="hover:text-yellow-400">Layanan</a></li>
+      <li><a href="berita.html" class="hover:text-yellow-400">Berita</a></li>
+      <li><a href="galeri.html" class="hover:text-yellow-400">Galeri</a></li>
+      <li><a href="kontak.html" class="hover:text-yellow-400">Kontak</a></li>
+    </ul>
+  </nav>
+
+  <!-- CONTENT -->
+  <main class="px-6 py-6">
+    <section class="bg-white/90 p-6 rounded-lg shadow-lg">
+      <h2 class="text-2xl font-bold mb-4">Profil Kecamatan Makale</h2>
+      <p>Halaman ini berisi informasi umum mengenai Kecamatan Makale.</p>
+
+      <ul class="list-disc ml-6 mt-4">
+        <li><a href="profil-kecamatan.html" class="text-blue-600 hover:underline">Profil Kecamatan</a></li>
+        <li><a href="profil-camat.html" class="text-blue-600 hover:underline">Profil Camat</a></li>
+        <li><a href="struktur-organisasi.html" class="text-blue-600 hover:underline">Struktur Organisasi</a></li>
+      </ul>
+
+      <a href="index.html" class="mt-6 inline-block text-blue-600 hover:underline">&larr; Kembali ke Beranda</a>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-black/70 text-gray-300 text-center py-4 mt-8">
+    <p>&copy; <span id="year"></span> Pemerintah Kecamatan Makale | Kabupaten Tana Toraja</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
-
 </html>
+
